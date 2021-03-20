@@ -1,0 +1,118 @@
+:root {
+  --color-Hover: rgb(228, 228, 228);
+  --color-basic: rgb(100, 100, 100);
+  --navTriangle-margin-top: 5px;
+  --navTriangle-margin-bottom: 0;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px 0px 40px;
+  color: var(--color-basic);
+  font-weight: 600;
+  width: 70px;
+  letter-spacing: 1px;
+
+  border-right: 2px solid var(--color-basic);
+}
+.navItemHover {
+  color: var(--color-Hover);
+  font-weight: bolder;
+}
+
+.navItem:first-child {
+  border-left: 2px solid var(--color-basic);
+}
+.navTriangle {
+  margin-top: var(--navTriangle-margin-top);
+
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--color-basic);
+  visibility: hidden;
+}
+
+.navTriangleHover {
+  padding-bottom: 0;
+  animation-name: bounceNavTriangleBottom;
+  animation-duration: 1s;
+  visibility: visible;
+}
+
+.navTriangleTop {
+  margin-top: var(--navTriangle-margin-top);
+
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--color-basic);
+  visibility: hidden;
+}
+
+.navTriangleTopHover {
+  padding-bottom: 0;
+  animation-name: bounceNavTriangleTop;
+  animation-duration: 1s;
+  visibility: visible;
+}
+
+@keyframes bounceNavTriangleBottom {
+  0% {
+    border-bottom-color: var(--color-basic);
+    margin-top: var(--navTriangle-margin-top);
+    margin-bottom: var(--navTriangle-margin-bottom);
+  }
+  20% {
+    border-bottom-color: var(--color-Hover);
+    margin-top: var(--navTriangle-margin-bottom);
+    margin-bottom: var(--navTriangle-margin-top);
+  }
+  40% {
+    border-bottom-color: var(--color-basic);
+    margin-top: var(--navTriangle-margin-top);
+    margin-bottom: var(--navTriangle-margin-bottom);
+  }
+  75% {
+    border-bottom-color: var(--color-Hover);
+    margin-top: var(--navTriangle-margin-bottom);
+    margin-bottom: var(--navTriangle-margin-top);
+  }
+  100% {
+    border-bottom-color: var(--color-basic);
+    margin-top: var(--navTriangle-margin-top);
+    margin-bottom: var(--navTriangle-margin-bottom);
+  }
+}
+
+@keyframes bounceNavTriangleTop {
+  0% {
+    border-top-color: var(--color-basic);
+    margin-top: var(--navTriangle-margin-bottom);
+    margin-bottom: var(--navTriangle-margin-top);
+  }
+  20% {
+    border-top-color: var(--color-Hover);
+    margin-top: var(--navTriangle-margin-top);
+    margin-bottom: var(--navTriangle-margin-bottom);
+  }
+  40% {
+    border-top-color: var(--color-basic);
+    margin-top: var(--navTriangle-margin-bottom);
+    margin-bottom: var(--navTriangle-margin-top);
+  }
+  75% {
+    border-top-color: var(--color-Hover);
+    margin-top: var(--navTriangle-margin-top);
+    margin-bottom: var(--navTriangle-margin-bottom);
+  }
+  100% {
+    border-top-color: var(--color-basic);
+    margin-top: var(--navTriangle-margin-bottom);
+    margin-bottom: var(--navTriangle-margin-top);
+  }
+}
