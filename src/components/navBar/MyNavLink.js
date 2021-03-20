@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import "./navItem.css";
-const NavItem = ({ text = "" }) => {
+import { Link } from "react-router-dom";
+import "./navLink.css";
+const MyNavLink = ({ text = "", to }) => {
   const [isItemHovered, setIsItemHovered] = useState(false);
   return (
-    <div
+    <Link
+      to={to}
       className={isItemHovered ? "navItem navItemHover" : "navItem"}
       onMouseOver={() => setIsItemHovered(true)}
       onMouseLeave={() => setIsItemHovered(false)}
@@ -30,8 +32,8 @@ const NavItem = ({ text = "" }) => {
           }
         ></div>
       </div>
-    </div>
+    </Link>
   );
 };
 
-export default NavItem;
+export default MyNavLink;
