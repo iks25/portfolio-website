@@ -1,0 +1,12 @@
+h1 {
+  margin-left: 20px;
+  line-height: 40px;
+  text-align: left;
+}
+
+.letter {
+  color: #ccc;
+  padding-left: 2px;
+  font-size: 40px;
+  font-weight: bolder;
+}

@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <NavBar lang={lang} />
-      <main>
+      <main style={{ backgroundColor: "grey" }}>
         <Switch>
           <Route path="/about-me" component={AboutMe} />
           <Route path="/skills" component={skills} />
