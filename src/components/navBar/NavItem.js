@@ -15,7 +15,13 @@ const NavItem = ({ text = "" }) => {
             : "navTriangleTop"
         }
       ></div>
-      <div>{text}</div>
+      <div
+        className={
+          isItemHovered ? "navItemText navItemTextHover" : "navItemText"
+        }
+      >
+        {text}
+      </div>
 
       <div>
         <div
