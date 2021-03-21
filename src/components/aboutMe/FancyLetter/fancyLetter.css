@@ -1,0 +1,27 @@
+:root {
+  --letterAnimColor: rgb(182, 21, 0);
+  --letterColor: #ccc;
+}
+
+.letter {
+  cursor: context-menu;
+  color: var(--letterColor);
+  padding-left: 2px;
+
+  font-size: 50px;
+  font-weight: bolder;
+}
+.letterHover {
+  scale: 1.5;
+
+  color: var(--letterAnimColor);
+  /* animation: letterAnimation 1s normal; */
+}
+
+@keyframes letterAnimation {
+  0% {
+  }
+  20% {
+    color: var(--letterAnimColor);
+  }
+}

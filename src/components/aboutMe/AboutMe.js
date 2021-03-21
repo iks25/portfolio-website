@@ -1,5 +1,6 @@
 import React from "react";
 import "./aboutMe.css";
+import FancyLetter, { convertTextToLetters } from "./FancyLetter/FancyLetter";
 
 const AboutMe = (props) => {
   let h1Text = "hello\nI am Igor,\nI am Software Developer";
@@ -9,7 +10,7 @@ const AboutMe = (props) => {
   return (
     <div>
       <h1>
-        {convertTextToLetters("Hello!")}
+        {convertTextToLetters("Hello,")}
         <br />
         {convertTextToLetters("I am Igor.")}
         <br />
@@ -22,13 +23,3 @@ const AboutMe = (props) => {
 };
 
 export default AboutMe;
-
-function convertTextToLetters(text) {
-  let arrayText = Array.from(text);
-
-  return arrayText.map((letter, index) => (
-    <span key={index} className="letter">
-      {letter}
-    </span>
-  ));
-}
