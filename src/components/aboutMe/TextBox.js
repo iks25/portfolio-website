@@ -4,8 +4,11 @@ import { useSpring, animated } from "react-spring";
 
 const TextBox = () => {
   const props = useSpring({
-    // marginLeft: "0",
-    // from: { marginLeft: "-1000px" },
+    to: [{ marginTop: 0, marginLeft: 0 }, { transform: "scale(1)" }],
+
+    from: { marginTop: 3000, marginLeft: 3000, transform: "scale(0.3)" },
+
+    config: { mass: 2, tension: 200, friction: 30 },
   });
   return (
     <div className="textBoxContainer">
