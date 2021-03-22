@@ -1,5 +1,23 @@
-h1 {
-  margin-left: 20px;
+.aboutMePage {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". .";
+}
+.textBox {
+  display: inline-block;
   line-height: 40px;
   text-align: left;
+  color: white;
+  padding: 20px 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+.textBoxContainer {
+  text-align: left;
+  width: 400px;
+  height: 400px;
+  border: 1px solid green;
 }
