@@ -7,6 +7,10 @@ import Contact from "./components/contact/Contact";
 import Projects from "./components/projects/Projects";
 import skills from "./components/skills/Skills";
 import NotFound from "./components/not-found/Not-Found";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+library.add(fab);
+
 function App() {
   let lang = "eng";
   return (

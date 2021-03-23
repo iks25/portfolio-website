@@ -1,5 +1,6 @@
 import React from "react";
 import "./aboutMe.css";
+import BisnessCard from "./FancyLetter/BisnessCard/BisnessCard";
 import FancyLetter, { convertTextToLetters } from "./FancyLetter/FancyLetter";
 import TextBox from "./TextBox";
 
@@ -11,6 +12,7 @@ const AboutMe = (props) => {
   return (
     <div className="aboutMePage" style={{ height: "800px" }}>
       <TextBox />
+      <BisnessCard />
       <div>mycard</div>
     </div>
   );
