@@ -12,8 +12,10 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import myPicture from "./jasquere.png";
 import "./bisnessCard.css";
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { animated, useSpring, useTransition } from "react-spring";
+import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from "react-dom";
 
 const BisnessCard = (props) => {
   const phoneIcon = <FontAwesomeIcon icon={faPhoneAlt} />;
@@ -22,9 +24,24 @@ const BisnessCard = (props) => {
   const githubIcon = <FontAwesomeIcon icon={["fab", "github"]} />;
   const linkedinIcon = <FontAwesomeIcon icon={["fab", "linkedin"]} />;
 
+  const [loadinNumber, setLoadinNumber] = useState(0);
+
+  const enterSpringStyle = useSpring({
+    from: { transform: "scale(1.6) translate(400px, -400px) rotate(20deg)" },
+    to: [
+      { transform: "scale(0.9) translate(0, 0) rotate(20deg)" },
+      { transform: "scale(0.9) translate(0, 0) rotate(0)" },
+    ],
+    delay: 7000,
+  });
+
+  const getSpringStyle = () => {
+    if (loadinNumber == 0) return enterSpringStyle;
+  };
+
   return (
     <div className="bisnessCardContainer">
-      <div className="bisnessCardBorder">
+      <animated.div className="bisnessCardBorder" style={getSpringStyle()}>
         <div className="bisnessCard">
           <img src={myPicture} className="myPicture" alt="profilImage" />
           <div className="nameDiv">Igor Kozerski</div>
@@ -50,7 +67,7 @@ const BisnessCard = (props) => {
             </div>
           </div>
         </div>
-      </div>
+      </animated.div>
     </div>
   );
 };

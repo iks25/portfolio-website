@@ -4,8 +4,39 @@ import { useSpring, animated, interpolate, config } from "react-spring";
 import { withRouter } from "react-router-dom";
 import { version } from "react-dom";
 
-const FancyLetter = ({ letter = "", addClass = "" }) => {
+const FancyLetter = ({ letter = "", addClass = "", delay = 0 }) => {
   const [isHover, setIsHover] = useState(false);
+
+  const drawingAnimation = useSpring({
+    from: { transform: "translateY(-600px) scale(1, 1)" },
+    to: [
+      {
+        transform: "translateY(0) scale(0.9, 1.1)",
+        config: { duration: 1000 },
+      },
+      {
+        transform: "translateY(0) scale(1.2, 0.9)",
+        config: { duration: 100 },
+      },
+      {
+        transform: "translateY(-50px) scale(0.95, 1.05)",
+        config: { duration: 500 },
+      },
+      {
+        transform: "translateY(-50px) scale(1, 1)",
+        config: { duration: 100 },
+      },
+      {
+        transform: "translateY(0) scale(0.93, 1.03)",
+        config: { duration: 500 },
+      },
+      {
+        transform: "translateY(0) scale(1, 1)",
+        config: { duration: 500 },
+      },
+    ],
+    delay: delay,
+  });
 
   const transformSpring = useSpring({
     from: { transform: "scale(1, 1)", color: "white" },
@@ -27,7 +58,8 @@ const FancyLetter = ({ letter = "", addClass = "" }) => {
       onMouseOver={() => {
         setIsHover(true);
       }}
-      style={styleEfect()}
+      // style={styleEfect()}
+      style={drawingAnimation}
       onMouseLeave={() => {
         setTimeout(() => {
           if (isHover) {
@@ -43,10 +75,15 @@ const FancyLetter = ({ letter = "", addClass = "" }) => {
 
 export default FancyLetter;
 
-export function convertTextToLetters(text, addClass = "") {
+export function convertTextToLetters(text, deley = 0, addClass = "") {
   let arrayText = Array.from(text);
 
   return arrayText.map((letter, index) => (
-    <FancyLetter letter={letter} key={index} addClass={addClass} />
+    <FancyLetter
+      letter={letter}
+      key={index}
+      addClass={addClass}
+      delay={index * 200 + deley}
+    />
   ));
 }

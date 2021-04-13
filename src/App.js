@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <NavBar lang={lang} />
-      <main style={{ backgroundColor: "grey" }}>
+      <main>
         <Switch>
           <Route path="/about-me" component={AboutMe} />
           <Route path="/skills" component={skills} />

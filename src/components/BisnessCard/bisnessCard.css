@@ -1,17 +1,31 @@
+:root {
+  --color1: rgb(23, 9, 36);
+  --color2: rgb(85, 35, 143);
+  --color3: rgb(104, 81, 117);
+  --color4: #9e80afff;
+}
+
 .bisnessCardContainer {
   font-size: 1.2em;
+  color: var(--color1);
+
+  font-weight: 600;
+}
+.bisnessCardContainer a {
+  color: var(--color1);
 }
 .bisnessCardBorder {
-  margin: 0 auto;
-  background-color: white;
+  margin: 0;
+  margin-left: 100px;
+  background-color: var(--color3);
   width: 280px;
   border-radius: 10px;
   padding: 15px;
-  border: 5px solid black;
+  border: 2px solid black;
 }
 .bisnessCard {
   margin: 0 auto;
-  background-color: rgb(255, 237, 213);
+  background-color: var(--color2);
 
   border-radius: 5px;
   padding: 10px 0;
@@ -20,7 +34,7 @@
 .myPicture {
   width: 130px;
   border-radius: 50%;
-  border: 5px solid black;
+  border: 5px solid var(--color4);
 }
 .nameDiv {
   text-transform: uppercase;
