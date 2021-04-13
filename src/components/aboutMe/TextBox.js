@@ -1,12 +1,18 @@
 import React from "react";
 import { convertTextToLetters } from "./FancyLetter/FancyLetter";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 
 const TextBox = () => {
   const props = useSpring({
-    to: [{ marginTop: 0, marginLeft: 0 }, { transform: "scale(1)" }],
-    from: { marginTop: 3000, marginLeft: 3000, transform: "scale(0.3)" },
-    config: { mass: 2, tension: 200, friction: 30 },
+    to: [
+      { marginTop: 0, marginLeft: 0 },
+      {
+        transform: "scale(1)",
+        config: { mass: 6, tension: 200 },
+      },
+    ],
+    from: { marginTop: -2500, marginLeft: 500, transform: "scale(0.3)" },
+    config: config.gentle,
   });
   return (
     <div className="textBoxContainer">
