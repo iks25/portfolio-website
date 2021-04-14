@@ -5,7 +5,9 @@ import { withRouter } from "react-router-dom";
 import { version } from "react-dom";
 
 const FancyLetter = ({ letter = "", addClass = "", delay = 0 }) => {
+  const [isEntered, setisEntered] = useState(true);
   const [isHover, setIsHover] = useState(false);
+  let refresznumber = 0;
 
   const drawingAnimation = useSpring({
     from: { transform: "translateY(-600px) scale(1, 1)" },
@@ -36,20 +38,35 @@ const FancyLetter = ({ letter = "", addClass = "", delay = 0 }) => {
       },
     ],
     delay: delay,
+    onRest: () => {
+      setisEntered(false);
+      console.log("end");
+    },
   });
 
   const transformSpring = useSpring({
     from: { transform: "scale(1, 1)", color: "white" },
-    to: [
-      { transform: "scale(1.4, 0.8)", color: "rgb(255, 158, 158)" },
-      { transform: "scale(0.9, 1.2)", color: "rgb(168, 158, 255)" },
-      { transform: "scale(1, 1)", color: "white" },
-    ],
+    to: isHover
+      ? [
+          { transform: "scale(1.4, 0.8)", color: "rgb(255, 158, 158)" },
+          { transform: "scale(0.9, 1.2)", color: "rgb(168, 158, 255)" },
+          { transform: "scale(1, 1)", color: "white" },
+        ]
+      : { transform: "scale(1, 1)", color: "white" },
     config: { velocity: 40, friction: 10, mass: 1, tension: 300 },
+    onRest: () => {
+      if (isHover) setIsHover(false);
+    },
   });
 
   const styleEfect = () => {
-    if (isHover) return transformSpring;
+    if (isEntered) {
+      console.log("-->");
+      return drawingAnimation;
+    }
+    return transformSpring;
+
+    // if (isHover) return transformSpring;
   };
 
   return (
@@ -58,15 +75,7 @@ const FancyLetter = ({ letter = "", addClass = "", delay = 0 }) => {
       onMouseOver={() => {
         setIsHover(true);
       }}
-      // style={styleEfect()}
-      style={drawingAnimation}
-      onMouseLeave={() => {
-        setTimeout(() => {
-          if (isHover) {
-            setIsHover(false);
-          }
-        }, 2000);
-      }}
+      style={styleEfect()}
     >
       {letter == " " ? <span> &nbsp; </span> : letter}
     </animated.div>
