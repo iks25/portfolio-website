@@ -1,0 +1,41 @@
+.skills {
+  color: rgb(150, 150, 150);
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 20px;
+}
+
+.skillsTextBox {
+  text-align: left;
+  background-color: rgba(196, 212, 255, 0.2);
+  width: 300px;
+  height: 280px;
+  padding: 10px;
+  padding-top: 0;
+  font-weight: 500;
+}
+
+.skillsTextBox div {
+  /* border: 1px solid green; */
+  height: 25px;
+}
+
+.category {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  opacity: 1 imm;
+  margin-bottom: 3px;
+}
+.skill {
+  display: flex;
+  margin-left: 30px;
+}
+
+.skillsInfo {
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  margin-left: 20px;
+  background-color: rgba(196, 212, 255, 0.2);
+}
