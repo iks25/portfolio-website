@@ -1,0 +1,29 @@
+.projectLabel{
+    background-color: rgba(255, 255, 255, 0.329);
+    width: 400px;
+    height: 170px;
+    border-radius: 15px;
+}
+.projectName
+{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bolder;
+}
+
+.projectLinks{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 4px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". .";
+           
+}
+.projectLabelLink{
+
+    border-radius: 15px;
+    background-color: white;
+}
