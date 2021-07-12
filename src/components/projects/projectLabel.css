@@ -40,6 +40,11 @@
   font-size: 20px;
   font-weight: 900;
   background-color: white;
+
+  color: black;
+  font-style: normal;
+  text-decoration: none;
+  display: block;
 }
 
 .triangleCorner {
