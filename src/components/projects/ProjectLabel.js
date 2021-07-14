@@ -12,6 +12,8 @@ const ProjectLabel = ({
   picture,
   codeLanguage,
 }) => {
+  // codeLanguage = chageText(codeLanguage);
+
   const [isHover, setIsHover] = useState(false);
   const { hoverScale } = useSpring({
     hoverScale: isHover ? 1.1 : 1,
@@ -85,3 +87,8 @@ const ProjectLabel = ({
 };
 
 export default ProjectLabel;
+
+function chageText(codeLanguage) {
+  if (codeLanguage.length) {
+  }
+}

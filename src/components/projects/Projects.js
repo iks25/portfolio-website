@@ -13,7 +13,7 @@ const Projects = (props) => {
       <div>
         <ProjectLabel
           title="inregular Verbs"
-          codeLanguage="HTML"
+          codeLanguage="JS"
           sourceCodeLink="gsd"
           projectLink="fs"
           picture={inregularVerbIMG}
