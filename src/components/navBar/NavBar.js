@@ -6,7 +6,12 @@ import "./navBar.css";
 const NavBar = ({ lang }) => {
   return (
     <div className="navBarContainer">
-      <MyNavLink to="/about-me" text={lang === "eng" ? "about" : "o mnie"} />
+      <MyNavLink
+        to="/about-me"
+        text={
+          lang === "eng" ? <span>about&nbsp;me</span> : <span>o&nbsp;mnie</span>
+        }
+      />
       <MyNavLink
         to="/projects"
         text={lang === "eng" ? "projects" : "projekty"}

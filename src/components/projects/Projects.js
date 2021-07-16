@@ -6,11 +6,7 @@ import inregularVerbIMG from "./img/inregularverbs.png";
 const Projects = (props) => {
   return (
     <div>
-      Projects
-      <br />
-      test ds
-      <div></div>
-      <div>
+      <div className="projects">
         <ProjectLabel
           title="inregular Verbs"
           codeLanguage="JS"
@@ -19,7 +15,6 @@ const Projects = (props) => {
           picture={inregularVerbIMG}
         />
       </div>
-      <div>fsdfsdfdsfds</div>
     </div>
   );
 };

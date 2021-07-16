@@ -1,0 +1,23 @@
+.contactBox {
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  margin-left: 20px;
+  background-color: rgba(196, 212, 255, 0.2);
+  color: rgb(150, 150, 150);
+  font-size: 25px;
+}
+.contactBox div {
+  margin-bottom: 5px;
+}
+.contactBox a {
+  color: rgb(150, 150, 150);
+  text-decoration: none;
+}
+
+.contactBox a span {
+  text-decoration: underline;
+}
+.contact {
+  padding-top: 20px;
+}
